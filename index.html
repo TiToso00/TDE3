@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Acompanhamento de Não-Conformidades</title>
+    <style>
+        /* Estilos básicos */
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h2 { text-align: center; }
+        form div { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        table, th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        .resolved { background-color: #d4edda; }
+        .pending { background-color: #f8d7da; }
+        .message { text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registro de Não-Conformidade</h2>
+    <form id="nc-form">
+        <div>
+            <label for="description">Descrição</label>
+            <textarea id="description" required></textarea>
+        </div>
+        <div>
+            <label for="severity">Severidade</label>
+            <select id="severity" required>
+                <option value="Alta">Alta</option>
+                <option value="Média">Média</option>
+                <option value="Baixa">Baixa</option>
+            </select>
+        </div>
+        <div>
+            <label for="responsible">Responsável</label>
+            <input type="text" id="responsible" required>
+        </div>
+        <div>
+            <label for="status">Status</label>
+            <select id="status" required>
+                <option value="Aberta">Aberta</option>
+                <option value="Em andamento">Em andamento</option>
+                <option value="Resolvida">Resolvida</option>
+            </select>
+        </div>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <h2>Acompanhamento de Não-Conformidades</h2>
+    <table id="nc-table">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Severidade</th>
+                <th>Responsável</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Porcentagem de Aderência</h2>
+    <p id="adherence">Aderência: 0%</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
